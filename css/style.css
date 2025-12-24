@@ -20,7 +20,85 @@ body {
   text-align: center;
 }
 
+.logo {
+  width: 300px;
+  max-width: 80%;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 10px 20px rgba(212, 175, 55, 0.3));
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.hero-text {
+  max-width: 800px;
+}
+
+.slogan-main {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 15px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  background: linear-gradient(90deg, #d4af37, #f7ef8a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shine 3s infinite alternate;
+}
+
+@keyframes shine {
+  0% { background-position: -100px; }
+  100% { background-position: 100px; }
+}
+
+.slogan-sub {
+  font-size: 1.4rem;
+  color: #e5e7eb;
+  margin-bottom: 25px;
+  opacity: 0.95;
+  font-weight: 300;
+}
+
+.hero-features {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.hero-features span {
+  background: rgba(212, 175, 55, 0.1);
+  padding: 12px 25px;
+  border-radius: 50px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  font-size: 0.95rem;
+  color: #d4af37;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-features i {
+  color: #d4af37;
+}
+/* ============================================
+   HERO SECTION CON ICONOS SOCIALES
+   ============================================ */
+.hero {
+  background: linear-gradient(rgba(15, 15, 15, 0.9), rgba(15, 15, 15, 0.95)), url('../assets/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 60px 20px 40px; /* Aumentado arriba para espacio de iconos */
+  text-align: center;
+  position: relative;
+}
+
 .hero-container {
+  position: relative;
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
@@ -94,74 +172,82 @@ body {
 .hero-features i {
   color: #d4af37;
 }
+
 /* ============================================
-   ICONOS SOCIALES EN HEADER
+   ICONOS SOCIALES EN HEADER - PROFESIONALES
    ============================================ */
 .social-header {
   position: absolute;
-  top: 25px;
-  right: 25px;
+  top: 30px;
+  right: 40px;
   display: flex;
-  gap: 15px;
-  z-index: 100;
+  gap: 18px;
+  z-index: 1000;
+  padding: 12px 20px;
+  border-radius: 50px;
+  background: rgba(15, 15, 15, 0.85);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 .social-header a {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #ffffff;
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  color: #d4af37;
   text-decoration: none;
-  font-size: 1.2rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-size: 1.3rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.15);
 }
 
 .social-header a:hover {
-  transform: translateY(-3px);
-  background: rgba(212, 175, 55, 0.9);
+  transform: translateY(-4px) scale(1.1);
+  background: rgba(212, 175, 55, 0.95);
   color: #000;
   border-color: #d4af37;
-  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
 }
 
-/* ESTILOS ESPECIALES PARA FACEBOOK (PRÓXIMAMENTE) */
+/* FACEBOOK - PRÓXIMAMENTE */
 .social-header .facebook-placeholder {
-  opacity: 0.7;
+  opacity: 0.5;
   cursor: not-allowed;
-  position: relative;
+  background: rgba(100, 100, 100, 0.1) !important;
+  border-color: rgba(150, 150, 150, 0.2) !important;
+  color: #777 !important;
 }
 
 .social-header .facebook-placeholder:hover {
-  background: #1877F2 !important; /* Azul de Facebook */
-  color: white !important;
-  opacity: 1;
-  cursor: pointer;
+  opacity: 0.8;
+  background: rgba(212, 175, 55, 0.6) !important;
+  color: #000 !important;
 }
 
-/* Tooltip para Facebook */
 .social-header .facebook-placeholder::after {
-  content: "Próximamente";
+  content: "Facebook - Próximamente";
   position: absolute;
-  bottom: -35px;
+  bottom: -40px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 0.7rem;
+  background: rgba(15, 15, 15, 0.95);
+  color: #d4af37;
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-size: 0.75rem;
   white-space: nowrap;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
-  z-index: 101;
+  z-index: 1001;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  font-weight: 500;
 }
 
 .social-header .facebook-placeholder:hover::after {
@@ -169,39 +255,88 @@ body {
   visibility: visible;
 }
 
-/* Colores específicos al pasar el mouse para redes activas */
-.social-header a[aria-label="Instagram"]:hover {
-  background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
-  color: #ffffff;
+/* ============================================
+   RESPONSIVE - ICONOS SOCIALES
+   ============================================ */
+
+/* TABLETS */
+@media (max-width: 992px) {
+  .social-header {
+    top: 25px;
+    right: 30px;
+    gap: 15px;
+    padding: 10px 18px;
+  }
+  
+  .social-header a {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  .slogan-main {
+    font-size: 2.3rem;
+  }
+  
+  .slogan-sub {
+    font-size: 1.2rem;
+  }
 }
 
-.social-header a[aria-label="TikTok"]:hover {
-  background: #000000;
-  color: #ffffff;
-}
-
-.social-header a[aria-label="WhatsApp"]:hover {
-  background: #25D366;
-  color: #ffffff;
-}
-
-/* Asegurar que el hero-container tenga posición relativa */
-.hero-container {
-  position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-}
-
-/* Responsive para móviles */
+/* MÓVILES */
 @media (max-width: 768px) {
+  .hero {
+    padding: 70px 20px 40px; /* Más espacio arriba para iconos */
+  }
+  
+  .social-header {
+    top: 20px;
+    right: 20px;
+    gap: 12px;
+    padding: 8px 16px;
+    background: rgba(15, 15, 15, 0.9);
+  }
+  
+  .social-header a {
+    width: 38px;
+    height: 38px;
+    font-size: 1.1rem;
+  }
+  
+  .logo {
+    width: 250px;
+    margin-top: 5px;
+  }
+  
+  .slogan-main {
+    font-size: 2rem;
+  }
+  
+  .slogan-sub {
+    font-size: 1.1rem;
+  }
+  
+  .hero-features {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  /* Tooltip para móviles */
+  .social-header .facebook-placeholder::after {
+    font-size: 0.7rem;
+    padding: 6px 12px;
+    bottom: -35px;
+  }
+}
+
+/* MÓVILES PEQUEÑOS */
+@media (max-width: 576px) {
   .social-header {
     top: 15px;
     right: 15px;
     gap: 10px;
+    padding: 6px 14px;
   }
   
   .social-header a {
@@ -210,7 +345,19 @@ body {
     font-size: 1rem;
   }
   
-  /* Ocultar tooltip en móviles */
+  .logo {
+    width: 220px;
+  }
+  
+  .slogan-main {
+    font-size: 1.8rem;
+  }
+  
+  .slogan-sub {
+    font-size: 1rem;
+  }
+  
+  /* Ocultar tooltip en móviles muy pequeños */
   .social-header .facebook-placeholder::after {
     display: none;
   }
