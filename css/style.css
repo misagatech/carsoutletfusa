@@ -862,6 +862,10 @@ footer {
   font-size: 0.95rem;
   font-style: italic;
 }
+.address-detail strong {
+  color: #d4af37;
+  font-size: 1.1rem;
+}
 
 /* Botones de acción */
 .location-actions {
