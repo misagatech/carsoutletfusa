@@ -17,8 +17,14 @@ body {
 }
 
 .logo {
-  width: 120px;
+  width: 220px;
   margin-bottom: 15px;
+  filter: drop-shadow(0 8px 14px rgba(0,0,0,0.5));
+}
+.slogan {
+  color: #e5e7eb;
+  font-size: 1.1rem;
+  opacity: 0.9;
 }
 
 .hero h1 {
