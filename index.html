@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Google Fonts para tipografía -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 </head>
 <body>
 
@@ -27,6 +29,7 @@
   </div>
 </header>
 
+<!-- SECCIÓN DE VEHÍCULOS -->
 <section class="cars">
   <!-- CARRO 1 -->
   <div class="car-card">
@@ -150,44 +153,127 @@
       </a>
     </div>
   </div>
-  <section class="location-section">
-  <h2 class="section-title">Visítanos en Fusagasugá</h2>
-  <div class="location-container">
-    <div class="location-info">
-      <h3><i class="fas fa-store"></i> Cars Outlet Fusa</h3>
-      <p><i class="fas fa-map-pin"></i> <strong>Dirección:</strong> Cl 8 #25-42, Sabaneta, Fusagasugá, Cundinamarca</p>
-      <p><i class="fas fa-phone"></i> <strong>Teléfono:</strong> +57 300 730 2210</p>
-      <p><i class="fas fa-clock"></i> <strong>Horario:</strong> Domingos a Domingos 10:00 AM - 6:00 PM</p>
-      <p><i class="fas fa-car"></i> Prueba de manejo disponible</p>
-      <p><i class="fas fa-parking"></i> Parqueadero para clientes</p>
-      <p><i class="fas fa-shield-alt"></i> Vehículos verificados y garantizados</p>
+</section> <!-- CIERRE DE LA SECCIÓN CARS -->
+
+<!-- SECCIÓN DE UBICACIÓN - PROFESIONAL Y ORGANIZADA -->
+<section class="location-section">
+  <div class="container">
+    <h2 class="section-title">
+      <i class="fas fa-map-marked-alt"></i> Visítanos en Fusagasugá
+    </h2>
+    <p class="section-subtitle">Encuéntranos en el corazón de la ciudad</p>
+    
+    <div class="location-grid">
+      <!-- Información de contacto -->
+      <div class="location-card">
+        <div class="location-header">
+          <i class="fas fa-store"></i>
+          <h3>Cars Outlet Fusa</h3>
+        </div>
+        
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-text">
+              <h4>Dirección</h4>
+              <p>Centro Comercial Avenida Fusagasugá<br>
+              <span class="address-detail">Local 205, Segundo piso</span></p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div class="contact-text">
+              <h4>Teléfono Corporativo</h4>
+              <p>+57 300 730 2210</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="contact-text">
+              <h4>Horario de Atención</h4>
+              <p>Domingo a Domingo<br>
+              <span class="time-detail">10:00 AM - 6:00 PM</span></p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-car"></i>
+            </div>
+            <div class="contact-text">
+              <h4>Servicios</h4>
+              <p>• Pruebas de manejo<br>
+                 • Financiación disponible<br>
+                 • Parqueadero gratuito</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="location-actions">
+          <a href="https://maps.google.com/?q=Centro+Comercial+Avenida+Fusagasugá" 
+             target="_blank" 
+             class="btn-location btn-directions">
+            <i class="fas fa-directions"></i> Cómo llegar
+          </a>
+          <a href="https://wa.me/573007302210?text=Hola,%20quiero%20visitar%20su%20concesionario%20en%20el%20Centro%20Comercial%20Avenida%20Fusagasugá" 
+             class="btn-location btn-whatsapp-map">
+            <i class="fab fa-whatsapp"></i> Confirmar visita
+          </a>
+        </div>
+      </div>
       
-      <div class="location-buttons">
-        <a href="https://maps.google.com/?q=Calle+8+%2325-42,+Sabaneta,+Fusagasugá,+Cundinamarca" 
-           target="_blank" 
-           class="btn-map">
-          <i class="fas fa-directions"></i> Cómo llegar
-        </a>
-        <a href="https://wa.me/573007302210?text=Hola,%20quiero%20información%20sobre%20sus%20vehículos%20y%20cómo%20llegar" 
-           class="btn-whatsapp-location">
-          <i class="fab fa-whatsapp"></i> WhatsApp
-        </a>
+      <!-- Mapa -->
+      <div class="map-card">
+        <div class="map-header">
+          <h3><i class="fas fa-map"></i> Nuestra Ubicación</h3>
+          <p class="map-instruction">Arrastra para explorar la zona</p>
+        </div>
+        
+        <div class="map-wrapper">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.107681193123!2d-74.36548302464864!3d4.339842495799119!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f02a2c8b3b3b3%3A0x9c8b4b4b4b4b4b4b!2sCentro%20Comercial%20Avenida%20Fusagasugá!5e0!3m2!1ses!2sco!4v1698796800000!5m2!1ses!2sco" 
+            width="100%" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Ubicación de Cars Outlet Fusa en Centro Comercial Avenida Fusagasugá">
+          </iframe>
+        </div>
+        
+        <div class="map-features">
+          <div class="feature">
+            <i class="fas fa-parking"></i>
+            <span>Parqueadero</span>
+          </div>
+          <div class="feature">
+            <i class="fas fa-shopping-cart"></i>
+            <span>Centro Comercial</span>
+          </div>
+          <div class="feature">
+            <i class="fas fa-utensils"></i>
+            <span>Zona de comidas</span>
+          </div>
+          <div class="feature">
+            <i class="fas fa-wheelchair"></i>
+            <span>Acceso discapacitados</span>
+          </div>
+        </div>
       </div>
     </div>
     
-    <div class="map-container">
-      <!-- Mapa de Google Maps -->
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.273965047844!2d-74.41345632501806!3d4.337780141883351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f029c86d2f0c9%3A0x8c4c8e7a6c5b5b5b!2sFusagasug%C3%A1%2C%20Cundinamarca!5e0!3m2!1ses!2sco!4v1700000000000!5m2!1ses!2sco" 
-        width="100%" 
-        height="400" 
-        style="border:0;" 
-        allowfullscreen="" 
-        loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade"
-        title="Ubicación de Cars Outlet Fusa - Cl 8 #25-42, Sabaneta, Fusagasugá">
-      </iframe>
-      <p class="map-note"><i class="fas fa-info-circle"></i> Haz clic en "Cómo llegar" para rutas exactas</p>
+    <div class="location-note">
+      <i class="fas fa-info-circle"></i>
+      <p><strong>Consejo:</strong> Estamos ubicados dentro del Centro Comercial Avenida Fusagasugá, local 205 del segundo piso. Amplio parqueadero disponible para nuestros clientes.</p>
     </div>
   </div>
 </section>
@@ -209,21 +295,49 @@
   <i class="fab fa-whatsapp"></i>
 </a>
 
+<!-- FOOTER -->
 <footer>
-  <div class="footer-content">
-    <div class="footer-logo">
-      <img src="assets/logo.png" alt="Cars Outlet Fusa" class="logo-footer">
-      <p>Venta de vehículos en Fusagasugá</p>
+  <div class="footer-container">
+    <div class="footer-brand">
+      <img src="assets/logo.png" alt="Cars Outlet Fusa" class="footer-logo">
+      <p class="footer-tagline">Tu concesionario de confianza en Fusagasugá</p>
+      <div class="social-icons">
+        <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://wa.me/573007302210" target="_blank" aria-label="WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
     </div>
-    <div class="footer-info">
-      <!-- Actualiza estos datos -->
-      <p><i class="fas fa-map-marker-alt"></i> Cl 8 #25-42, Sabaneta, Fusagasugá</p>
-      <p><i class="fas fa-phone"></i> Teléfono: +57 300 730 2210</p>
-      <p><i class="fas fa-clock"></i> Horario: Domingos a Domingos 10AM - 6PM</p>
+    
+    <div class="footer-contact">
+      <h4>Contacto</h4>
+      <div class="contact-details">
+        <p><i class="fas fa-map-marker-alt"></i> Centro Comercial Avenida Fusagasugá, Local 205</p>
+        <p><i class="fas fa-phone"></i> +57 300 730 2210</p>
+        <p><i class="fas fa-clock"></i> Domingos a Domingos: 10AM - 6PM</p>
+        <p><i class="fas fa-car"></i> Pruebas de manejo siempre disponibles</p>
+      </div>
+    </div>
+    
+    <div class="footer-quick">
+      <h4>Acceso Rápido</h4>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#vehiculos">Vehículos</a></li>
+        <li><a href="#ubicacion">Ubicación</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
     </div>
   </div>
-  <div class="footer-copy">
-    <p>&copy; 2024 Cars Outlet Fusa. Todos los derechos reservados.</p>
+  
+  <div class="footer-bottom">
+    <p>&copy; 2024 <strong>Cars Outlet Fusa</strong>. Todos los derechos reservados.</p>
+    <p class="footer-legal">Venta de vehículos usados y seminuevos garantizados.</p>
   </div>
 </footer>
 
