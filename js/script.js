@@ -1,106 +1,129 @@
-// Modal para imágenes
-const modal = document.getElementById('imageModal');
-const modalImage = document.getElementById('modalImage');
-const closeModal = document.querySelector('.close-modal');
-const carImages = document.querySelectorAll('.car-image');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
+// Modal para imágenes - VERSIÓN CORREGIDA
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const closeModal = document.querySelector('.close-modal');
+    const carImages = document.querySelectorAll('.car-image');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
 
-let currentImageIndex = 0;
-let imagesArray = [];
+    let currentImageIndex = 0;
+    let imagesArray = [];
 
-// Inicializar el array de imágenes
-carImages.forEach((img, index) => {
-    imagesArray.push({
-        src: img.getAttribute('data-full') || img.src,
-        alt: img.alt
-    });
-    
-    // Agregar evento click a cada imagen
-    img.addEventListener('click', () => {
-        currentImageIndex = index;
-        openModal(currentImageIndex);
-    });
-});
+    console.log('Script cargado. Imágenes encontradas:', carImages.length);
 
-function openModal(index) {
-    modal.style.display = 'flex';
-    modalImage.src = imagesArray[index].src;
-    modalImage.alt = imagesArray[index].alt;
-    document.body.style.overflow = 'hidden'; // Prevenir scroll
-}
-
-function closeImageModal() {
-    modal.style.display = 'none';
-    document.body.style.overflow = 'auto'; // Restaurar scroll
-}
-
-function showNextImage() {
-    currentImageIndex = (currentImageIndex + 1) % imagesArray.length;
-    modalImage.src = imagesArray[currentImageIndex].src;
-    modalImage.alt = imagesArray[currentImageIndex].alt;
-}
-
-function showPrevImage() {
-    currentImageIndex = (currentImageIndex - 1 + imagesArray.length) % imagesArray.length;
-    modalImage.src = imagesArray[currentImageIndex].src;
-    modalImage.alt = imagesArray[currentImageIndex].alt;
-}
-
-// Event Listeners
-closeModal.addEventListener('click', closeImageModal);
-modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        closeImageModal();
-    }
-});
-
-prevBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    showPrevImage();
-});
-
-nextBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    showNextImage();
-});
-
-// Navegación con teclado
-document.addEventListener('keydown', (e) => {
-    if (modal.style.display === 'flex') {
-        if (e.key === 'Escape') {
-            closeImageModal();
-        } else if (e.key === 'ArrowRight') {
-            showNextImage();
-        } else if (e.key === 'ArrowLeft') {
-            showPrevImage();
-        }
-    }
-});
-
-// Efecto de carga suave para imágenes
-window.addEventListener('load', () => {
-    document.body.style.opacity = 0;
-    document.body.style.transition = 'opacity 0.5s ease';
-    
-    setTimeout(() => {
-        document.body.style.opacity = 1;
-    }, 100);
-});
-
-// Smooth scroll para anclas internas
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
+    // Inicializar el array de imágenes
+    carImages.forEach((img, index) => {
+        console.log(`Imagen ${index}:`, img.src);
         
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-            window.scrollTo({
-                top: targetElement.offsetTop - 80,
-                behavior: 'smooth'
+        imagesArray.push({
+            src: img.getAttribute('data-full') || img.src,
+            alt: img.alt
+        });
+        
+        // Agregar evento click a cada imagen
+        img.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Clic en imagen', index);
+            currentImageIndex = index;
+            openModal(currentImageIndex);
+        });
+        
+        // Eliminar el enlace <a> que rodea la imagen si existe
+        const parentLink = img.closest('a');
+        if (parentLink) {
+            parentLink.addEventListener('click', function(e) {
+                e.preventDefault();
             });
         }
     });
+
+    function openModal(index) {
+        console.log('Abriendo modal con índice:', index);
+        console.log('URL de la imagen:', imagesArray[index].src);
+        
+        // Mostrar el modal
+        modal.classList.add('show');
+        modal.style.display = 'flex';
+        
+        // Cargar la imagen
+        modalImage.src = imagesArray[index].src;
+        modalImage.alt = imagesArray[index].alt;
+        
+        // Prevenir scroll del body
+        document.body.style.overflow = 'hidden';
+        
+        console.log('Modal debería estar visible ahora');
+    }
+
+    function closeImageModal() {
+        console.log('Cerrando modal');
+        modal.classList.remove('show');
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+
+    function showNextImage() {
+        currentImageIndex = (currentImageIndex + 1) % imagesArray.length;
+        modalImage.src = imagesArray[currentImageIndex].src;
+        modalImage.alt = imagesArray[currentImageIndex].alt;
+        console.log('Siguiente imagen:', currentImageIndex);
+    }
+
+    function showPrevImage() {
+        currentImageIndex = (currentImageIndex - 1 + imagesArray.length) % imagesArray.length;
+        modalImage.src = imagesArray[currentImageIndex].src;
+        modalImage.alt = imagesArray[currentImageIndex].alt;
+        console.log('Imagen anterior:', currentImageIndex);
+    }
+
+    // Event Listeners
+    closeModal.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closeImageModal();
+    });
+
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeImageModal();
+        }
+    });
+
+    prevBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        showPrevImage();
+    });
+
+    nextBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        showNextImage();
+    });
+
+    // Navegación con teclado
+    document.addEventListener('keydown', function(e) {
+        if (modal.classList.contains('show')) {
+            console.log('Tecla presionada:', e.key);
+            if (e.key === 'Escape' || e.key === 'Esc') {
+                closeImageModal();
+            } else if (e.key === 'ArrowRight') {
+                showNextImage();
+            } else if (e.key === 'ArrowLeft') {
+                showPrevImage();
+            }
+        }
+    });
+
+    // Asegurarse de que todas las imágenes tengan el atributo data-full
+    carImages.forEach(img => {
+        if (!img.hasAttribute('data-full')) {
+            img.setAttribute('data-full', img.src);
+        }
+    });
+
+    // Depuración: verificar que los elementos existen
+    console.log('Modal encontrado:', !!modal);
+    console.log('Botón cerrar:', !!closeModal);
+    console.log('Botón anterior:', !!prevBtn);
+    console.log('Botón siguiente:', !!nextBtn);
+    console.log('Array de imágenes:', imagesArray.length);
 });
