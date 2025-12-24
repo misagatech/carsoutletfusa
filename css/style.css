@@ -94,7 +94,127 @@ body {
 .hero-features i {
   color: #d4af37;
 }
+/* ============================================
+   ICONOS SOCIALES EN HEADER
+   ============================================ */
+.social-header {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  display: flex;
+  gap: 15px;
+  z-index: 100;
+}
 
+.social-header a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.social-header a:hover {
+  transform: translateY(-3px);
+  background: rgba(212, 175, 55, 0.9);
+  color: #000;
+  border-color: #d4af37;
+  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.4);
+}
+
+/* ESTILOS ESPECIALES PARA FACEBOOK (PRÓXIMAMENTE) */
+.social-header .facebook-placeholder {
+  opacity: 0.7;
+  cursor: not-allowed;
+  position: relative;
+}
+
+.social-header .facebook-placeholder:hover {
+  background: #1877F2 !important; /* Azul de Facebook */
+  color: white !important;
+  opacity: 1;
+  cursor: pointer;
+}
+
+/* Tooltip para Facebook */
+.social-header .facebook-placeholder::after {
+  content: "Próximamente";
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.7rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 101;
+}
+
+.social-header .facebook-placeholder:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Colores específicos al pasar el mouse para redes activas */
+.social-header a[aria-label="Instagram"]:hover {
+  background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+  color: #ffffff;
+}
+
+.social-header a[aria-label="TikTok"]:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
+.social-header a[aria-label="WhatsApp"]:hover {
+  background: #25D366;
+  color: #ffffff;
+}
+
+/* Asegurar que el hero-container tenga posición relativa */
+.hero-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .social-header {
+    top: 15px;
+    right: 15px;
+    gap: 10px;
+  }
+  
+  .social-header a {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  
+  /* Ocultar tooltip en móviles */
+  .social-header .facebook-placeholder::after {
+    display: none;
+  }
+}
 /* CARS GRID */
 .cars {
   display: grid;
