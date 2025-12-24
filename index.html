@@ -3,139 +3,189 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cars Outlet Fusa</title>
+  <title>Cars Outlet Fusa - Compra tu vehículo ideal</title>
   <link rel="stylesheet" href="css/style.css" />
+  <!-- Font Awesome para iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts para tipografía -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <header class="hero">
-  <img src="assets/logo.png" alt="Cars Outlet Fusa" class="logo">
-  <p class="slogan">Compra tu próximo carro fácil, rápido y seguro</p>
+  <div class="hero-container">
+    <img src="assets/logo.png" alt="Cars Outlet Fusa" class="logo">
+    <div class="hero-text">
+      <h1 class="slogan-main">Tu próximo vehículo está aquí</h1>
+      <p class="slogan-sub">Compra fácil, rápido y con total confianza</p>
+      <div class="hero-features">
+        <span><i class="fas fa-check-circle"></i> Financiación disponible</span>
+        <span><i class="fas fa-check-circle"></i> Garantía verificada</span>
+        <span><i class="fas fa-check-circle"></i> Entrega inmediata</span>
+      </div>
+    </div>
+  </div>
 </header>
 
 <section class="cars">
-
   <!-- CARRO 1 -->
   <div class="car-card">
+    <div class="car-badge">NOVEDAD</div>
     <div class="img-box">
-      <a href="assets/autos/auto1.jpg" target="_blank">
-        <img src="assets/autos/auto1.jpg" alt="Volvo XC60" onclick="openModal(this)">
+      <img src="assets/autos/auto1.jpg" alt="Volvo XC60" class="car-image" data-full="assets/autos/auto1.jpg">
+    </div>
+    <div class="car-content">
+      <h3>Volvo XC60 T6 4X4</h3>
+      <div class="car-details">
+        <p><i class="fas fa-calendar-alt"></i> Modelo 2013</p>
+        <p><i class="fas fa-tachometer-alt"></i> 68.000 km</p>
+        <p><i class="fas fa-cog"></i> Automática</p>
+        <p><i class="fas fa-gas-pump"></i> Gasolina</p>
+      </div>
+      <div class="car-price">
+        <span class="price-label">Precio especial</span>
+      </div>
+      <a class="btn-whatsapp" href="https://wa.me/573142802903?text=Hola,%20me%20interesa%20el%20Volvo%20XC60%20T6%204X4%20modelo%202013">
+        <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
       </a>
     </div>
-    <h3>Volvo XC60 T6 4X4</h3>
-    <p>
-      Modelo 2013 · 68.000 km<br>
-      Automática · Gasolina
-    </p>
-    <a class="btn" href="https://wa.me/573142802903?text=Hola,%20me%20interesa%20el%20Chevrolet%20Spark%202007">
-      Consultar por WhatsApp
-    </a>
   </div>
 
   <!-- CARRO 2 -->
   <div class="car-card">
+    <div class="car-badge">CLÁSICO</div>
     <div class="img-box">
-      <a href="assets/autos/auto2.jpg" target="_blank">
-        <img src="assets/autos/auto2.jpg" alt="Jeep Grand Cherokee 1994" onclick="openModal(this)">
+      <img src="assets/autos/auto2.jpg" alt="Jeep Grand Cherokee 1994" class="car-image" data-full="assets/autos/auto2.jpg">
+    </div>
+    <div class="car-content">
+      <h3>Jeep Grand Cherokee 1994</h3>
+      <div class="car-details">
+        <p><i class="fas fa-calendar-alt"></i> Modelo 1994</p>
+        <p><i class="fas fa-tachometer-alt"></i> 160.000 km</p>
+        <p><i class="fas fa-cog"></i> Automática</p>
+        <p><i class="fas fa-gas-pump"></i> Gasolina</p>
+      </div>
+      <div class="car-price">
+        <span class="price-label">Oferta exclusiva</span>
+      </div>
+      <a class="btn-whatsapp" href="https://wa.me/573142802903?text=Hola,%20me%20interesa%20el%20Jeep%20Grand%20Cherokee%201994">
+        <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
       </a>
     </div>
-    <h3>Jeep Grand Cherokee 1994</h3>
-    <p>
-      Modelo 1994 · 160.000 km<br>
-      Automática · Gasolina
-    </p>
-    <a class="btn" href="https://wa.me/573142802903?text=Hola,%20me%20interesa%20el%20Mazda%202%202015">
-      Consultar por WhatsApp
-    </a>
   </div>
 
-   <!-- CARRO 3 -->
+  <!-- CARRO 3 -->
   <div class="car-card">
     <div class="img-box">
-      <a href="assets/autos/auto3.jpg" target="_blank">
-        <img src="assets/autos/auto3.jpg" alt="Renault Clio Expression 2011" onclick="openModal(this)">
+      <img src="assets/autos/auto3.jpg" alt="Renault Clio Expression 2011" class="car-image" data-full="assets/autos/auto3.jpg">
+    </div>
+    <div class="car-content">
+      <h3>Renault Clio Expression 2011</h3>
+      <div class="car-details">
+        <p><i class="fas fa-calendar-alt"></i> Modelo 2011</p>
+        <p><i class="fas fa-tachometer-alt"></i> 101.800 km</p>
+        <p><i class="fas fa-cog"></i> Automática</p>
+        <p><i class="fas fa-gas-pump"></i> Gasolina</p>
+      </div>
+      <a class="btn-whatsapp" href="https://wa.me/573142802903?text=Hola,%20me%20interesa%20el%20Renault%20Clio%20Expression%202011">
+        <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
       </a>
     </div>
-    <h3>Renault Clio Expression 2011</h3>
-    <p>
-      Modelo 2011 · 101.800 km<br>
-      Automático · Gasolina
-    </p>
-    <a class="btn" href="https://wa.me/573142802903?text=Hola,%20me%20interesa%20el%20Mazda%202%202015">
-      Consultar por WhatsApp
-    </a>
   </div>
 
-    <!-- CARRO 4 -->
+  <!-- CARRO 4 -->
   <div class="car-card">
     <div class="img-box">
-      <a href="assets/autos/auto4.jpg" target="_blank">
-        <img src="assets/autos/auto4.jpg" alt="Fiat Siena ELX modelo 2005" onclick="openModal(this)">
+      <img src="assets/autos/auto4.jpg" alt="Fiat Siena ELX modelo 2005" class="car-image" data-full="assets/autos/auto4.jpg">
+    </div>
+    <div class="car-content">
+      <h3>Fiat Siena ELX 2005</h3>
+      <div class="car-details">
+        <p><i class="fas fa-calendar-alt"></i> Modelo 2005</p>
+        <p><i class="fas fa-tachometer-alt"></i> 160.000 km</p>
+        <p><i class="fas fa-cog"></i> Mecánica</p>
+        <p><i class="fas fa-gas-pump"></i> Gasolina</p>
+      </div>
+      <a class="btn-whatsapp" href="https://wa.me/573142802903?text=Hola,%20me%20interesa%20el%20Fiat%20Siena%20ELX%202005">
+        <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
       </a>
     </div>
-    <h3>Fiat Siena ELX modelo 2005</h3>
-    <p>
-      Modelo 2005 · 160.000 km<br>
-      Mecánico · Gasolina
-    </p>
-    <a class="btn" href="https://wa.me/573142802903?text=Hola,%20me%20interesa%20el%20Mazda%202%202015">
-      Consultar por WhatsApp
-    </a>
   </div>
 
-    <!-- CARRO 5 -->
+  <!-- CARRO 5 -->
+  <div class="car-card">
+    <div class="car-badge">ECONÓMICO</div>
+    <div class="img-box">
+      <img src="assets/autos/auto5.jpg" alt="Nissan Tiida 2010" class="car-image" data-full="assets/autos/auto5.jpg">
+    </div>
+    <div class="car-content">
+      <h3>Nissan Tiida 2010</h3>
+      <div class="car-details">
+        <p><i class="fas fa-calendar-alt"></i> Modelo 2010</p>
+        <p><i class="fas fa-tachometer-alt"></i> 160.000 km</p>
+        <p><i class="fas fa-cog"></i> Mecánica</p>
+        <p><i class="fas fa-gas-pump"></i> Gasolina</p>
+      </div>
+      <a class="btn-whatsapp" href="https://wa.me/573142802903?text=Hola,%20me%20interesa%20el%20Nissan%20Tiida%202010">
+        <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <!-- CARRO 6 -->
   <div class="car-card">
     <div class="img-box">
-      <a href="assets/autos/auto5.jpg" target="_blank">
-        <img src="assets/autos/auto5.jpg" alt="Nissan Tiida 2010" onclick="openModal(this)">
+      <img src="assets/autos/auto6.jpg" alt="Chevrolet Spark 2007" class="car-image" data-full="assets/autos/auto6.jpg">
+    </div>
+    <div class="car-content">
+      <h3>Chevrolet Spark 2007</h3>
+      <div class="car-details">
+        <p><i class="fas fa-calendar-alt"></i> Modelo 2007</p>
+        <p><i class="fas fa-tachometer-alt"></i> 126.300 km</p>
+        <p><i class="fas fa-cog"></i> Mecánica</p>
+        <p><i class="fas fa-gas-pump"></i> Gasolina</p>
+      </div>
+      <a class="btn-whatsapp" href="https://wa.me/573142802903?text=Hola,%20me%20interesa%20el%20Chevrolet%20Spark%202007">
+        <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
       </a>
     </div>
-    <h3>Nissan Tiida 2010</h3>
-    <p>
-      Modelo 2010 · 160.000 km<br>
-      Mecánico · Gasolina
-    </p>
-    <a class="btn" href="https://wa.me/573142802903?text=Hola,%20me%20interesa%20el%20Mazda%202%202015">
-      Consultar por WhatsApp
-    </a>
   </div>
-
-    <!-- CARRO 6 -->
-  <div class="car-card">
-    <div class="img-box">
-      <a href="assets/autos/auto6.jpg" target="_blank">
-        <img src="assets/autos/auto6.jpg" alt="Chevrolet Spark 2007" onclick="openModal(this)">
-      </a>
-    </div>
-    <h3>Chevrolet Spark 2007</h3>
-    <p>
-      Modelo 2007 · 126.300 km<br>
-      Mecánico · Gasolina
-    </p>
-    <a class="btn" href="https://wa.me/573142802903?text=Hola,%20me%20interesa%20el%20Mazda%202%202015">
-     Consultar por WhatsApp
-    </a>
-  </div>
-
 </section>
-<div id="imgModal" class="modal">
-  <span class="close">&times;</span>
-  <img class="modal-content" id="modalImg">
+
+<!-- Modal para imágenes grandes -->
+<div id="imageModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <img id="modalImage" src="" alt="Vista ampliada del vehículo">
+    <div class="image-controls">
+      <button id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+      <button id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
 </div>
 
-<script>
-  const modal = document.getElementById("imgModal");
-  const modalImg = document.getElementById("modalImg");
-  const closeBtn = document.querySelector(".close");
+<!-- WhatsApp Flotante -->
+<a href="https://wa.me/573142802903?text=Hola,%20estoy%20interesado%20en%20un%20vehículo" class="whatsapp-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
 
-  function openModal(img) {
-    modal.style.display = "flex";
-    modalImg.src = img.src;
-  }
+<footer>
+  <div class="footer-content">
+    <div class="footer-logo">
+      <img src="assets/logo.png" alt="Cars Outlet Fusa" class="logo-footer">
+      <p>Tu concesionario de confianza en Fusa</p>
+    </div>
+    <div class="footer-info">
+      <p><i class="fas fa-map-marker-alt"></i> Dirección: Fusa, Colombia</p>
+      <p><i class="fas fa-phone"></i> Teléfono: +57 314 280 2903</p>
+      <p><i class="fas fa-clock"></i> Horario: Lunes a Sábado 8AM - 6PM</p>
+    </div>
+  </div>
+  <div class="footer-copy">
+    <p>&copy; 2024 Cars Outlet Fusa. Todos los derechos reservados.</p>
+  </div>
+</footer>
 
-  closeBtn.onclick = () => modal.style.display = "none";
-  modal.onclick = () => modal.style.display = "none";
-</script>
-
+<script src="js/script.js"></script>
 </body>
 </html>
