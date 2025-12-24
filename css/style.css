@@ -262,16 +262,25 @@ body {
 /* TABLETS */
 @media (max-width: 992px) {
   .social-header {
-    top: 25px;
-    right: 30px;
+    position: relative; /* Cambiado de absolute */
+    top: 0;
+    right: 0;
     gap: 15px;
     padding: 10px 18px;
+    margin: 0 auto 20px; /* Centrado con margen inferior */
+    width: fit-content;
+    background: rgba(15, 15, 15, 0.9);
+    backdrop-filter: blur(10px);
   }
   
   .social-header a {
     width: 40px;
     height: 40px;
     font-size: 1.2rem;
+  }
+  
+  .hero-container {
+    padding-top: 20px;
   }
   
   .slogan-main {
@@ -286,15 +295,26 @@ body {
 /* MÓVILES */
 @media (max-width: 768px) {
   .hero {
-    padding: 70px 20px 40px; /* Más espacio arriba para iconos */
+    padding: 40px 20px; /* Reducido el padding superior */
   }
   
   .social-header {
-    top: 20px;
-    right: 20px;
+    position: relative;
+    top: 0;
+    right: 0;
     gap: 12px;
     padding: 8px 16px;
-    background: rgba(15, 15, 15, 0.9);
+    margin: 0 auto 25px; /* Espacio entre iconos y logo */
+    width: fit-content;
+    background: rgba(15, 15, 15, 0.95);
+    backdrop-filter: blur(10px);
+    order: -1; /* Coloca los iconos antes del logo */
+  }
+  
+  .hero-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
   }
   
   .social-header a {
@@ -305,7 +325,7 @@ body {
   
   .logo {
     width: 250px;
-    margin-top: 5px;
+    margin-top: 0; /* Eliminado margen superior */
   }
   
   .slogan-main {
@@ -333,10 +353,9 @@ body {
 /* MÓVILES PEQUEÑOS */
 @media (max-width: 576px) {
   .social-header {
-    top: 15px;
-    right: 15px;
     gap: 10px;
     padding: 6px 14px;
+    margin-bottom: 20px;
   }
   
   .social-header a {
@@ -357,7 +376,7 @@ body {
     font-size: 1rem;
   }
   
-  /* Ocultar tooltip en móviles muy pequeños */
+  /* Ajuste para iconos muy pequeños */
   .social-header .facebook-placeholder::after {
     display: none;
   }
