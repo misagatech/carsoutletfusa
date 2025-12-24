@@ -126,4 +126,23 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Botón anterior:', !!prevBtn);
     console.log('Botón siguiente:', !!nextBtn);
     console.log('Array de imágenes:', imagesArray.length);
+
+    // Smooth scroll para enlaces internos - AGREGA ESTO AL FINAL
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            // Scroll suave
+            window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
 });
