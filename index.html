@@ -122,7 +122,20 @@
   <span class="close">&times;</span>
   <img class="modal-content" id="modalImg">
 </div>
- 
+
+<script>
+  const modal = document.getElementById("imgModal");
+  const modalImg = document.getElementById("modalImg");
+  const closeBtn = document.querySelector(".close");
+
+  function openModal(img) {
+    modal.style.display = "flex";
+    modalImg.src = img.src;
+  }
+
+  closeBtn.onclick = () => modal.style.display = "none";
+  modal.onclick = () => modal.style.display = "none";
+</script>
+
 </body>
 </html>
-
