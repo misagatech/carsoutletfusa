@@ -1,4 +1,4 @@
-// Modal para imágenes - VERSIÓN COMPLETA CON GALERÍA POR VEHÍCULO
+// Modal para imágenes - VERSIÓN FINAL CORREGIDA
 document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('imageModal');
     const modalImage = document.getElementById('modalImage');
@@ -6,6 +6,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
     
+    // Crear contador de imágenes dinámicamente
+    const counter = document.createElement('div');
+    counter.className = 'modal-counter';
+    counter.innerHTML = '<span id="currentImg">1</span> / <span id="totalImg">2</span>';
+    document.querySelector('.modal-content').appendChild(counter);
+
     // Variables globales
     let currentCar = '';
     let currentImages = [];
@@ -30,8 +36,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    console.log('Imágenes organizadas por vehículo:', imagesByCar);
-
     // Agregar evento click a cada imagen
     allImages.forEach(img => {
         img.addEventListener('click', function(e) {
@@ -53,10 +57,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Función para abrir el modal
     function openModal() {
-        console.log('Abriendo modal para:', currentCar);
-        console.log('Imágenes disponibles:', currentImages);
-        console.log('Índice actual:', currentIndex);
-        
         // Mostrar el modal
         modal.classList.add('show');
         modal.style.display = 'flex';
@@ -64,19 +64,25 @@ document.addEventListener('DOMContentLoaded', function() {
         // Cargar la imagen actual
         updateModalImage();
         
+        // Actualizar contador
+        updateCounter();
+        
         // Resetear zoom
         isZoomed = false;
         modalImage.classList.remove('zoomed');
         
         // Prevenir scroll del body
         document.body.style.overflow = 'hidden';
-        
-        console.log('Modal abierto con éxito');
+    }
+
+    // Función para actualizar el contador
+    function updateCounter() {
+        document.getElementById('currentImg').textContent = currentIndex + 1;
+        document.getElementById('totalImg').textContent = currentImages.length;
     }
 
     // Función para cerrar el modal
     function closeImageModal() {
-        console.log('Cerrando modal');
         modal.classList.remove('show');
         modal.style.display = 'none';
         document.body.style.overflow = 'auto';
@@ -87,8 +93,9 @@ document.addEventListener('DOMContentLoaded', function() {
         if (currentImages.length > 0 && currentIndex < currentImages.length) {
             modalImage.src = currentImages[currentIndex].src;
             modalImage.alt = currentImages[currentIndex].alt;
+            updateCounter();
             
-            // Precargar siguiente y anterior para mejor experiencia
+            // Precargar imágenes adyacentes
             preloadAdjacentImages();
         }
     }
@@ -98,7 +105,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (currentImages.length > 0) {
             currentIndex = (currentIndex + 1) % currentImages.length;
             updateModalImage();
-            console.log('Siguiente imagen:', currentIndex);
         }
     }
 
@@ -107,7 +113,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (currentImages.length > 0) {
             currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
             updateModalImage();
-            console.log('Imagen anterior:', currentIndex);
         }
     }
 
@@ -116,10 +121,8 @@ document.addEventListener('DOMContentLoaded', function() {
         isZoomed = !isZoomed;
         if (isZoomed) {
             modalImage.classList.add('zoomed');
-            modalImage.title = 'Haz clic o presiona Esc para salir del zoom';
         } else {
             modalImage.classList.remove('zoomed');
-            modalImage.title = '';
         }
     }
 
@@ -178,7 +181,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Navegación con teclado
     document.addEventListener('keydown', function(e) {
         if (modal.classList.contains('show')) {
-            console.log('Tecla presionada:', e.key);
             switch(e.key) {
                 case 'Escape':
                 case 'Esc':
@@ -198,14 +200,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 case 'Enter':
                     e.preventDefault();
                     toggleZoom();
-                    break;
-                case '+':
-                case '=':
-                    if (!isZoomed) toggleZoom();
-                    break;
-                case '-':
-                case '_':
-                    if (isZoomed) toggleZoom();
                     break;
             }
         }
@@ -229,32 +223,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Asegurar que todas las imágenes tengan atributos necesarios
-    allImages.forEach(img => {
-        if (!img.hasAttribute('data-full')) {
-            img.setAttribute('data-full', img.src);
-        }
-        if (!img.hasAttribute('data-car')) {
-            // Extraer nombre del vehículo del alt
-            const alt = img.alt.toLowerCase();
-            if (alt.includes('volvo')) img.setAttribute('data-car', 'volvo');
-            else if (alt.includes('jeep')) img.setAttribute('data-car', 'jeep');
-            else if (alt.includes('renault')) img.setAttribute('data-car', 'renault');
-            else if (alt.includes('fiat')) img.setAttribute('data-car', 'fiat');
-            else if (alt.includes('nissan')) img.setAttribute('data-car', 'nissan');
-            else if (alt.includes('chevrolet')) img.setAttribute('data-car', 'chevrolet');
-            else img.setAttribute('data-car', 'car' + Math.floor(Math.random() * 1000));
-        }
-    });
-
-    // Depuración en consola
-    console.log('=== CARS OUTLET FUSA - GALERÍA INICIADA ===');
-    console.log('Modal encontrado:', !!modal);
-    console.log('Botón cerrar:', !!closeModal);
-    console.log('Botones de navegación:', !!prevBtn, !!nextBtn);
-    console.log('Vehículos con imágenes:', Object.keys(imagesByCar).length);
-    Object.keys(imagesByCar).forEach(car => {
-        console.log(`- ${car}: ${imagesByCar[car].length} imágenes`);
-    });
-    console.log('===========================================');
+    console.log('✅ Galería de imágenes cargada correctamente');
+    console.log(`📷 Vehículos cargados: ${Object.keys(imagesByCar).length}`);
 });
