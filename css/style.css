@@ -9,6 +9,7 @@ body {
   background: #0f0f0f;
   color: #fff;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 .container {
@@ -187,7 +188,7 @@ body {
 }
 
 /* ============================================
-   GALERÍA DE VEHÍCULOS
+   GALERÍA DE VEHÍCULOS - CORREGIDO
    ============================================ */
 .cars {
   display: grid;
@@ -196,6 +197,7 @@ body {
   padding: 60px 40px;
   max-width: 1400px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .car-card {
@@ -206,6 +208,8 @@ body {
   position: relative;
   border: 1px solid rgba(255,255,255,0.05);
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  width: 100%;
+  height: auto;
 }
 
 .car-card:hover {
@@ -224,13 +228,13 @@ body {
   border-radius: 20px;
   font-size: 0.8rem;
   font-weight: 600;
-  z-index: 2;
+  z-index: 10;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 /* ============================================
-   GALERÍA DE IMÁGENES POR VEHÍCULO
+   GALERÍA DE IMÁGENES POR VEHÍCULO - CORREGIDO
    ============================================ */
 .img-box {
   width: 100%;
@@ -238,8 +242,7 @@ body {
   overflow: hidden;
   position: relative;
   cursor: pointer;
-  display: flex;
-  flex-direction: column;
+  background: #1a1a1a;
 }
 
 .car-image {
@@ -252,11 +255,19 @@ body {
   left: 0;
 }
 
+/* Para imágenes en formato 16:9 (TikTok) */
+.car-image[data-index="1"],
+.car-image-secondary {
+  object-fit: contain;
+  background: linear-gradient(135deg, #1a1a1a, #222222);
+}
+
 .car-image-secondary {
   opacity: 0;
   transform: translateX(100%);
 }
 
+/* Transición al hacer hover */
 .img-box:hover .car-image:first-child {
   opacity: 0;
   transform: translateX(-100%);
@@ -267,23 +278,7 @@ body {
   transform: translateX(0);
 }
 
-.img-box::before {
-  content: '2 fotos';
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.7rem;
-  font-weight: 600;
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  background: rgba(212, 175, 55, 0.9);
-  color: #000;
-  padding: 4px 10px;
-  border-radius: 12px;
-  z-index: 3;
-  opacity: 0.9;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-}
-
+/* Icono de zoom en la esquina superior derecha */
 .img-box::after {
   content: '\f00e';
   font-family: 'Font Awesome 5 Free';
@@ -301,7 +296,7 @@ body {
   justify-content: center;
   opacity: 0;
   transition: opacity 0.3s ease;
-  z-index: 3;
+  z-index: 5;
   font-size: 1.2rem;
 }
 
@@ -370,6 +365,7 @@ body {
   border: none;
   width: 100%;
   font-size: 1rem;
+  cursor: pointer;
 }
 
 .btn-whatsapp:hover {
@@ -379,7 +375,7 @@ body {
 }
 
 /* ============================================
-   MODAL PARA IMÁGENES
+   MODAL PARA IMÁGENES - CORREGIDO
    ============================================ */
 .modal {
   display: none;
@@ -425,6 +421,8 @@ body {
   box-shadow: 0 20px 60px rgba(0,0,0,0.8);
   object-fit: contain;
   transition: transform 0.3s ease;
+  background: #1a1a1a;
+  padding: 10px;
 }
 
 #modalImage.zoomed {
@@ -489,54 +487,30 @@ body {
   box-shadow: 0 6px 15px rgba(0,0,0,0.4);
 }
 
-/* Botón de zoom en el modal */
-.modal-zoom-btn {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  background: rgba(212, 175, 55, 0.9);
-  border: none;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  color: #000;
-  font-size: 20px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  z-index: 10000;
-}
-
-.modal-zoom-btn:hover {
-  background: #d4af37;
-  transform: scale(1.1);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
-}
-
 /* Contador de imágenes en el modal */
 .modal-counter {
   position: absolute;
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.8);
   color: white;
-  padding: 8px 20px;
-  border-radius: 20px;
-  font-size: 0.9rem;
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-size: 1rem;
   z-index: 10000;
   text-align: center;
-  min-width: 100px;
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  min-width: 120px;
+  border: 2px solid rgba(212, 175, 55, 0.5);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
 }
 
 .modal-counter span {
   color: #d4af37;
-  font-weight: 600;
+  font-weight: 700;
   margin: 0 5px;
+  font-size: 1.1rem;
 }
 
 /* ============================================
@@ -971,7 +945,7 @@ footer {
 }
 
 /* ============================================
-   RESPONSIVE
+   RESPONSIVE - CORREGIDO
    ============================================ */
 
 /* TABLETS */
@@ -1187,5 +1161,9 @@ footer {
   
   .social-header .facebook-placeholder::after {
     display: none;
+  }
+  
+  .img-box {
+    height: 220px;
   }
 }
