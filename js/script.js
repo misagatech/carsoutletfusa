@@ -1,10 +1,11 @@
-// Modal para imágenes - VERSIÓN FINAL CORREGIDA
+// Modal para imágenes - VERSIÓN COMPLETA CON ZOOM
 document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('imageModal');
     const modalImage = document.getElementById('modalImage');
     const closeModal = document.querySelector('.close-modal');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
+    const zoomBtn = document.getElementById('zoomBtn');
     
     // Crear contador de imágenes dinámicamente
     const counter = document.createElement('div');
@@ -68,8 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
         updateCounter();
         
         // Resetear zoom
-        isZoomed = false;
-        modalImage.classList.remove('zoomed');
+        resetZoom();
         
         // Prevenir scroll del body
         document.body.style.overflow = 'hidden';
@@ -86,6 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
         modal.classList.remove('show');
         modal.style.display = 'none';
         document.body.style.overflow = 'auto';
+        resetZoom();
     }
 
     // Función para actualizar la imagen en el modal
@@ -105,6 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (currentImages.length > 0) {
             currentIndex = (currentIndex + 1) % currentImages.length;
             updateModalImage();
+            resetZoom(); // Resetear zoom al cambiar imagen
         }
     }
 
@@ -113,6 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (currentImages.length > 0) {
             currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
             updateModalImage();
+            resetZoom(); // Resetear zoom al cambiar imagen
         }
     }
 
@@ -121,9 +124,21 @@ document.addEventListener('DOMContentLoaded', function() {
         isZoomed = !isZoomed;
         if (isZoomed) {
             modalImage.classList.add('zoomed');
+            zoomBtn.innerHTML = '<i class="fas fa-search-minus"></i>';
+            zoomBtn.title = 'Reducir zoom (Esc)';
         } else {
             modalImage.classList.remove('zoomed');
+            zoomBtn.innerHTML = '<i class="fas fa-search-plus"></i>';
+            zoomBtn.title = 'Ampliar imagen';
         }
+    }
+
+    // Función para resetear zoom
+    function resetZoom() {
+        isZoomed = false;
+        modalImage.classList.remove('zoomed');
+        zoomBtn.innerHTML = '<i class="fas fa-search-plus"></i>';
+        zoomBtn.title = 'Ampliar imagen';
     }
 
     // Función para precargar imágenes adyacentes
@@ -164,6 +179,12 @@ document.addEventListener('DOMContentLoaded', function() {
         showNextImage();
     });
 
+    // Botón de zoom
+    zoomBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        toggleZoom();
+    });
+
     // Zoom con doble clic en la imagen
     modalImage.addEventListener('dblclick', function(e) {
         e.stopPropagation();
@@ -200,6 +221,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 case 'Enter':
                     e.preventDefault();
                     toggleZoom();
+                    break;
+                case '+':
+                case '=':
+                    if (!isZoomed) toggleZoom();
+                    break;
+                case '-':
+                case '_':
+                    if (isZoomed) toggleZoom();
                     break;
             }
         }
