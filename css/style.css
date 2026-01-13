@@ -11,88 +11,20 @@ body {
   line-height: 1.6;
 }
 
-/* HERO SECTION */
-.hero {
-  background: linear-gradient(rgba(15, 15, 15, 0.9), rgba(15, 15, 15, 0.95)), url('../assets/hero-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  padding: 40px 20px;
-  text-align: center;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.logo {
-  width: 300px;
-  max-width: 80%;
-  margin-bottom: 10px;
-  filter: drop-shadow(0 10px 20px rgba(212, 175, 55, 0.3));
-  transition: transform 0.3s ease;
-}
-
-.logo:hover {
-  transform: scale(1.05);
-}
-
-.hero-text {
-  max-width: 800px;
-}
-
-.slogan-main {
-  font-size: 2.8rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 15px;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-  background: linear-gradient(90deg, #d4af37, #f7ef8a);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: shine 3s infinite alternate;
-}
-
-@keyframes shine {
-  0% { background-position: -100px; }
-  100% { background-position: 100px; }
-}
-
-.slogan-sub {
-  font-size: 1.4rem;
-  color: #e5e7eb;
-  margin-bottom: 25px;
-  opacity: 0.95;
-  font-weight: 300;
-}
-
-.hero-features {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 25px;
-  margin-top: 30px;
-}
-
-.hero-features span {
-  background: rgba(212, 175, 55, 0.1);
-  padding: 12px 25px;
-  border-radius: 50px;
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  font-size: 0.95rem;
-  color: #d4af37;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.hero-features i {
-  color: #d4af37;
-}
 /* ============================================
-   HERO SECTION CON ICONOS SOCIALES
+   HERO SECTION
    ============================================ */
 .hero {
   background: linear-gradient(rgba(15, 15, 15, 0.9), rgba(15, 15, 15, 0.95)), url('../assets/hero-bg.jpg');
   background-size: cover;
   background-position: center;
-  padding: 60px 20px 40px; /* Aumentado arriba para espacio de iconos */
+  padding: 60px 20px 40px;
   text-align: center;
   position: relative;
 }
@@ -174,7 +106,7 @@ body {
 }
 
 /* ============================================
-   ICONOS SOCIALES EN HEADER - PROFESIONALES
+   ICONOS SOCIALES EN HEADER
    ============================================ */
 .social-header {
   position: absolute;
@@ -215,7 +147,6 @@ body {
   box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
 }
 
-/* FACEBOOK - PRÓXIMAMENTE */
 .social-header .facebook-placeholder {
   opacity: 0.5;
   cursor: not-allowed;
@@ -256,132 +187,8 @@ body {
 }
 
 /* ============================================
-   RESPONSIVE - ICONOS SOCIALES
+   GALERÍA DE VEHÍCULOS
    ============================================ */
-
-/* TABLETS */
-@media (max-width: 992px) {
-  .social-header {
-    position: relative; /* Cambiado de absolute */
-    top: 0;
-    right: 0;
-    gap: 15px;
-    padding: 10px 18px;
-    margin: 0 auto 20px; /* Centrado con margen inferior */
-    width: fit-content;
-    background: rgba(15, 15, 15, 0.9);
-    backdrop-filter: blur(10px);
-  }
-  
-  .social-header a {
-    width: 40px;
-    height: 40px;
-    font-size: 1.2rem;
-  }
-  
-  .hero-container {
-    padding-top: 20px;
-  }
-  
-  .slogan-main {
-    font-size: 2.3rem;
-  }
-  
-  .slogan-sub {
-    font-size: 1.2rem;
-  }
-}
-
-/* MÓVILES */
-@media (max-width: 768px) {
-  .hero {
-    padding: 40px 20px; /* Reducido el padding superior */
-  }
-  
-  .social-header {
-    position: relative;
-    top: 0;
-    right: 0;
-    gap: 12px;
-    padding: 8px 16px;
-    margin: 0 auto 25px; /* Espacio entre iconos y logo */
-    width: fit-content;
-    background: rgba(15, 15, 15, 0.95);
-    backdrop-filter: blur(10px);
-    order: -1; /* Coloca los iconos antes del logo */
-  }
-  
-  .hero-container {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-  }
-  
-  .social-header a {
-    width: 38px;
-    height: 38px;
-    font-size: 1.1rem;
-  }
-  
-  .logo {
-    width: 250px;
-    margin-top: 0; /* Eliminado margen superior */
-  }
-  
-  .slogan-main {
-    font-size: 2rem;
-  }
-  
-  .slogan-sub {
-    font-size: 1.1rem;
-  }
-  
-  .hero-features {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-  }
-  
-  /* Tooltip para móviles */
-  .social-header .facebook-placeholder::after {
-    font-size: 0.7rem;
-    padding: 6px 12px;
-    bottom: -35px;
-  }
-}
-
-/* MÓVILES PEQUEÑOS */
-@media (max-width: 576px) {
-  .social-header {
-    gap: 10px;
-    padding: 6px 14px;
-    margin-bottom: 20px;
-  }
-  
-  .social-header a {
-    width: 36px;
-    height: 36px;
-    font-size: 1rem;
-  }
-  
-  .logo {
-    width: 220px;
-  }
-  
-  .slogan-main {
-    font-size: 1.8rem;
-  }
-  
-  .slogan-sub {
-    font-size: 1rem;
-  }
-  
-  /* Ajuste para iconos muy pequeños */
-  .social-header .facebook-placeholder::after {
-    display: none;
-  }
-}
-/* CARS GRID */
 .cars {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -391,7 +198,6 @@ body {
   margin: 0 auto;
 }
 
-/* CARD */
 .car-card {
   background: linear-gradient(145deg, #1a1a1a, #222222);
   border-radius: 20px;
@@ -423,24 +229,59 @@ body {
   letter-spacing: 1px;
 }
 
-/* IMAGE */
+/* ============================================
+   GALERÍA DE IMÁGENES POR VEHÍCULO
+   ============================================ */
 .img-box {
   width: 100%;
   height: 240px;
   overflow: hidden;
   position: relative;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
 }
 
 .car-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: all 0.5s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-.img-box:hover .car-image {
-  transform: scale(1.1);
+.car-image-secondary {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.img-box:hover .car-image:first-child {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.img-box:hover .car-image-secondary {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.img-box::before {
+  content: '2 fotos';
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: rgba(212, 175, 55, 0.9);
+  color: #000;
+  padding: 4px 10px;
+  border-radius: 12px;
+  z-index: 3;
+  opacity: 0.9;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
 .img-box::after {
@@ -450,8 +291,8 @@ body {
   position: absolute;
   top: 15px;
   right: 15px;
-  background: rgba(0,0,0,0.7);
-  color: white;
+  background: rgba(0,0,0,0.8);
+  color: #d4af37;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -460,13 +301,14 @@ body {
   justify-content: center;
   opacity: 0;
   transition: opacity 0.3s ease;
+  z-index: 3;
+  font-size: 1.2rem;
 }
 
 .img-box:hover::after {
   opacity: 1;
 }
 
-/* CONTENT */
 .car-content {
   padding: 25px;
 }
@@ -513,7 +355,6 @@ body {
   font-size: 1rem;
 }
 
-/* BUTTON */
 .btn-whatsapp {
   display: flex;
   align-items: center;
@@ -537,11 +378,13 @@ body {
   box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
 }
 
-/* MODAL */
+/* ============================================
+   MODAL PARA IMÁGENES
+   ============================================ */
 .modal {
-  display: none; /* Oculto por defecto */
+  display: none;
   position: fixed;
-  z-index: 9999; /* Aumentado para estar sobre todo */
+  z-index: 9999;
   left: 0;
   top: 0;
   width: 100%;
@@ -554,7 +397,12 @@ body {
 }
 
 .modal.show {
-  display: flex; /* Esta clase se agrega con JavaScript */
+  display: flex;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .modal-content {
@@ -571,11 +419,17 @@ body {
 #modalImage {
   width: auto;
   height: auto;
-  max-width: 100%;
+  max-width: 90vw;
   max-height: 80vh;
   border-radius: 10px;
   box-shadow: 0 20px 60px rgba(0,0,0,0.8);
-  object-fit: contain; /* Importante: mantiene proporciones */
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+#modalImage.zoomed {
+  transform: scale(1.5);
+  cursor: zoom-out;
 }
 
 .close-modal {
@@ -635,21 +489,59 @@ body {
   box-shadow: 0 6px 15px rgba(0,0,0,0.4);
 }
 
-/* Para dispositivos móviles */
-@media (max-width: 768px) {
-  .image-controls button {
-    width: 40px;
-    height: 40px;
-    font-size: 16px;
-  }
-  
-  .close-modal {
-    top: -40px;
-    font-size: 40px;
-  }
+/* Botón de zoom en el modal */
+.modal-zoom-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(212, 175, 55, 0.9);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #000;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 10000;
 }
 
-/* WHATSAPP FLOAT */
+.modal-zoom-btn:hover {
+  background: #d4af37;
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+
+/* Contador de imágenes en el modal */
+.modal-counter {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.7);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  z-index: 10000;
+  text-align: center;
+  min-width: 100px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.modal-counter span {
+  color: #d4af37;
+  font-weight: 600;
+  margin: 0 5px;
+}
+
+/* ============================================
+   WHATSAPP FLOTANTE
+   ============================================ */
 .whatsapp-float {
   position: fixed;
   bottom: 30px;
@@ -682,348 +574,9 @@ body {
   animation: none;
 }
 
-/* FOOTER */
-footer {
-  background: #0a0a0a;
-  padding: 50px 40px 30px;
-  border-top: 1px solid rgba(212, 175, 55, 0.1);
-}
-
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
-  margin-bottom: 40px;
-}
-
-.logo-footer {
-  width: 200px;
-  margin-bottom: 20px;
-  filter: drop-shadow(0 5px 10px rgba(0,0,0,0.5));
-}
-
-.footer-logo p {
-  color: #bbb;
-  font-size: 1rem;
-}
-
-.footer-info p {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 15px;
-  color: #bbb;
-  font-size: 0.95rem;
-}
-
-.footer-info i {
-  color: #d4af37;
-  width: 20px;
-}
-
-.footer-copy {
-  text-align: center;
-  padding-top: 30px;
-  border-top: 1px solid rgba(255,255,255,0.05);
-  color: #777;
-  font-size: 0.9rem;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .slogan-main {
-    font-size: 2rem;
-  }
-  
-  .slogan-sub {
-    font-size: 1.1rem;
-  }
-  
-  .cars {
-    grid-template-columns: 1fr;
-    padding: 40px 20px;
-    gap: 25px;
-  }
-  
-  .hero-features {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-  }
-  
-  .logo {
-    width: 250px;
-  }
-  
-  .image-controls {
-    padding: 0 10px;
-  }
-  
-  .image-controls button {
-    width: 40px;
-    height: 40px;
-    font-size: 16px;
-  }
-  
-  .close-modal {
-    top: -30px;
-    font-size: 40px;
-  }
-  
-  .whatsapp-float {
-    bottom: 20px;
-    right: 20px;
-    width: 55px;
-    height: 55px;
-    font-size: 26px;
-  }
-}
 /* ============================================
-   SECCIÓN DE UBICACIÓN CON MAPA
+   SECCIÓN DE UBICACIÓN
    ============================================ */
-.location-section {
-  background: linear-gradient(135deg, #0a0a0a 0%, #111111 100%);
-  padding: 70px 20px;
-  border-top: 1px solid rgba(212, 175, 55, 0.15);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
-}
-
-.section-title {
-  font-size: 2.3rem;
-  color: #ffffff;
-  text-align: center;
-  margin-bottom: 50px;
-  position: relative;
-  padding-bottom: 15px;
-  font-weight: 600;
-}
-
-.section-title::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120px;
-  height: 4px;
-  background: linear-gradient(90deg, #d4af37, #b8962e);
-  border-radius: 2px;
-}
-
-.location-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-  align-items: center;
-}
-
-/* Información de contacto */
-.location-info {
-  background: rgba(26, 26, 26, 0.9);
-  padding: 35px 30px;
-  border-radius: 18px;
-  border: 1px solid rgba(212, 175, 55, 0.25);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
-}
-
-.location-info h3 {
-  color: #d4af37;
-  font-size: 1.7rem;
-  margin-bottom: 25px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.location-info p {
-  color: #e0e0e0;
-  margin-bottom: 14px;
-  font-size: 1.05rem;
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  line-height: 1.5;
-}
-
-.location-info i {
-  color: #d4af37;
-  width: 22px;
-  text-align: center;
-  font-size: 1.1rem;
-  flex-shrink: 0;
-  margin-top: 3px;
-}
-
-.location-info strong {
-  color: #ffffff;
-  font-weight: 600;
-  margin-right: 5px;
-}
-
-/* Botones de ubicación */
-.location-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-top: 35px;
-}
-
-.btn-map, .btn-whatsapp-location {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  padding: 16px 20px;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  text-align: center;
-  font-size: 1.05rem;
-  border: none;
-  cursor: pointer;
-}
-
-.btn-map {
-  background: linear-gradient(90deg, #4285F4, #34A853);
-  color: white;
-}
-
-.btn-whatsapp-location {
-  background: linear-gradient(90deg, #25D366, #128C7E);
-  color: white;
-}
-
-.btn-map:hover, .btn-whatsapp-location:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
-}
-
-.btn-map:hover {
-  background: linear-gradient(90deg, #3367D6, #2E8B57);
-}
-
-.btn-whatsapp-location:hover {
-  background: linear-gradient(90deg, #1DA851, #0E7A5E);
-}
-
-/* Mapa */
-.map-container {
-  background: #1a1a1a;
-  border-radius: 18px;
-  overflow: hidden;
-  border: 1px solid rgba(212, 175, 55, 0.25);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
-  height: fit-content;
-}
-
-.map-container iframe {
-  display: block;
-  width: 100%;
-  height: 400px;
-  border: none;
-}
-
-.map-note {
-  text-align: center;
-  padding: 15px;
-  color: #bbb;
-  font-size: 0.9rem;
-  background: rgba(0,0,0,0.25);
-  margin: 0;
-  border-top: 1px solid rgba(255,255,255,0.05);
-}
-
-.map-note i {
-  color: #d4af37;
-  margin-right: 8px;
-}
-
-/* ============================================
-   ACTUALIZAR EL FOOTER
-   ============================================ */
-/* Actualiza el footer que ya tienes */
-.footer-info {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.footer-info p {
-  color: #ccc;
-  font-size: 0.95rem;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.footer-info i {
-  color: #d4af37;
-  width: 18px;
-}
-
-/* Para destacar el horario especial */
-.footer-info p:nth-child(3) {
-  color: #d4af37;
-  font-weight: 600;
-}
-
-/* ============================================
-   RESPONSIVE - UBICACIÓN
-   ============================================ */
-@media (max-width: 992px) {
-  .location-container {
-    grid-template-columns: 1fr;
-    gap: 35px;
-    max-width: 600px;
-  }
-  
-  .location-section {
-    padding: 60px 15px;
-  }
-  
-  .section-title {
-    font-size: 2rem;
-    margin-bottom: 40px;
-  }
-  
-  .location-info {
-    padding: 30px 25px;
-  }
-  
-  .map-container iframe {
-    height: 350px;
-  }
-}
-
-@media (max-width: 576px) {
-  .section-title {
-    font-size: 1.8rem;
-  }
-  
-  .location-info h3 {
-    font-size: 1.5rem;
-  }
-  
-  .location-info p {
-    font-size: 1rem;
-  }
-  
-  .btn-map, .btn-whatsapp-location {
-    padding: 14px 18px;
-    font-size: 1rem;
-  }
-}
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
 .location-section {
   background: linear-gradient(135deg, #0a0a0a 0%, #111111 100%);
   padding: 80px 0;
@@ -1063,7 +616,6 @@ footer {
   margin-bottom: 40px;
 }
 
-/* Tarjeta de información */
 .location-card {
   background: rgba(26, 26, 26, 0.9);
   border-radius: 20px;
@@ -1153,7 +705,6 @@ footer {
   font-size: 1.1rem;
 }
 
-/* Botones de acción */
 .location-actions {
   display: grid;
   grid-template-columns: 1fr;
@@ -1199,7 +750,6 @@ footer {
   background: linear-gradient(135deg, #1DA851, #0E7A5E);
 }
 
-/* Tarjeta del Mapa */
 .map-card {
   background: rgba(26, 26, 26, 0.9);
   border-radius: 20px;
@@ -1294,11 +844,19 @@ footer {
   color: #d4af37;
 }
 
-/* FOOTER MEJORADO */
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+  background: #0a0a0a;
+  padding: 50px 0 30px;
+  border-top: 1px solid rgba(212, 175, 55, 0.1);
+}
+
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 50px 20px;
+  padding: 0 20px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 40px;
@@ -1397,6 +955,7 @@ footer {
   padding: 25px 20px;
   border-top: 1px solid rgba(255,255,255,0.05);
   background: rgba(0,0,0,0.3);
+  margin-top: 50px;
 }
 
 .footer-bottom p {
@@ -1411,8 +970,47 @@ footer {
   margin-top: 10px !important;
 }
 
-/* RESPONSIVE */
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+/* TABLETS */
 @media (max-width: 992px) {
+  .social-header {
+    position: relative;
+    top: 0;
+    right: 0;
+    gap: 15px;
+    padding: 10px 18px;
+    margin: 0 auto 20px;
+    width: fit-content;
+    background: rgba(15, 15, 15, 0.9);
+    backdrop-filter: blur(10px);
+  }
+  
+  .social-header a {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  .hero-container {
+    padding-top: 20px;
+  }
+  
+  .slogan-main {
+    font-size: 2.3rem;
+  }
+  
+  .slogan-sub {
+    font-size: 1.2rem;
+  }
+  
+  .cars {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    padding: 40px 20px;
+  }
+  
   .location-grid {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -1427,7 +1025,62 @@ footer {
   }
 }
 
+/* MÓVILES */
 @media (max-width: 768px) {
+  .hero {
+    padding: 40px 20px;
+  }
+  
+  .social-header {
+    position: relative;
+    top: 0;
+    right: 0;
+    gap: 12px;
+    padding: 8px 16px;
+    margin: 0 auto 25px;
+    width: fit-content;
+    background: rgba(15, 15, 15, 0.95);
+    backdrop-filter: blur(10px);
+    order: -1;
+  }
+  
+  .hero-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  
+  .social-header a {
+    width: 38px;
+    height: 38px;
+    font-size: 1.1rem;
+  }
+  
+  .logo {
+    width: 250px;
+    margin-top: 0;
+  }
+  
+  .slogan-main {
+    font-size: 2rem;
+  }
+  
+  .slogan-sub {
+    font-size: 1.1rem;
+  }
+  
+  .hero-features {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .cars {
+    grid-template-columns: 1fr;
+    padding: 40px 20px;
+    gap: 25px;
+  }
+  
   .location-section {
     padding: 60px 0;
   }
@@ -1460,9 +1113,57 @@ footer {
     grid-template-columns: 1fr;
     gap: 30px;
   }
+  
+  .image-controls {
+    padding: 0 10px;
+  }
+  
+  .image-controls button {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+  
+  .close-modal {
+    top: -30px;
+    font-size: 40px;
+  }
+  
+  .whatsapp-float {
+    bottom: 20px;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+    font-size: 26px;
+  }
 }
 
+/* MÓVILES PEQUEÑOS */
 @media (max-width: 576px) {
+  .social-header {
+    gap: 10px;
+    padding: 6px 14px;
+    margin-bottom: 20px;
+  }
+  
+  .social-header a {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  
+  .logo {
+    width: 220px;
+  }
+  
+  .slogan-main {
+    font-size: 1.8rem;
+  }
+  
+  .slogan-sub {
+    font-size: 1rem;
+  }
+  
   .section-title {
     font-size: 1.6rem;
   }
@@ -1482,5 +1183,9 @@ footer {
   
   .map-wrapper iframe {
     height: 300px;
+  }
+  
+  .social-header .facebook-placeholder::after {
+    display: none;
   }
 }
